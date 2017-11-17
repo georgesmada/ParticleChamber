@@ -3,6 +3,7 @@ class Animation:
 	def animateFrame(self, speed, instant, tracking, size):
 		nextInstant = list(instant)
 		
+		#recursion termination check
 		if self.validation(tracking[len(tracking)-1]): return tracking
 		
 		i = 0
@@ -30,7 +31,8 @@ class Animation:
 			if x == "." or x == "": track += "."
 			else: track += "X"
 		return track
-		
+	
+	#terminate recursion if no 'X' in chamber
 	def validation(self, track):
 		for s in track:
 			if s == "X": return False
