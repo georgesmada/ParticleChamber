@@ -36,9 +36,8 @@ class Animation:
 			if s == "X": return False
 		return True
 		
-	def animate(self, speed, initPos):		
-		if not isinstance(speed, int) or not isinstance(initPos, str): return "input error"		
-		
+	def animate(self, speed, initPos):								
+		if speed < 1: return "error"
 		tracking = list()
 		instant = list(initPos)
 		
